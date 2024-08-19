@@ -50,29 +50,57 @@ const Navbar = () => {
                     <motion.a
                     whileHover={{scale: 1.1}}
                     whileTap={{scale: 0.9}}
-                    href="#home"
                     onClick={(e) => {
                         e.preventDefault();
                         handleCloseMenu();
                         handleScrollTo('home')
                     }}
+                    href="#home"
                     className={`text-white ${activeSection ==='home' ? 'isActive' : ''}`}>Home</motion.a>
                 </li>
                 <li>
-                    <a href="#services"
-                    className={`text-white ${activeSection ==='services' ? 'isActive' : ''}`}>Services</a>
+                    <motion.a href="#services"
+                      whileHover={{scale: 1.1}}
+                      whileTap={{scale: 0.9}}
+                      onClick={(e) => {
+                          e.preventDefault();
+                          handleCloseMenu();
+                          handleScrollTo('services')
+                      }}
+                    className={`text-white ${activeSection ==='services' ? 'isActive' : ''}`}>Services</motion.a>
                 </li>
                 <li>
-                    <a href="#about"
-                    className={`text-white ${activeSection ==='about' ? 'isActive' : ''}`}>About Us</a>
+                    <motion.a href="#about"
+                      whileHover={{scale: 1.1}}
+                      whileTap={{scale: 0.9}}
+                      onClick={(e) => {
+                          e.preventDefault();
+                          handleCloseMenu();
+                          handleScrollTo('about')
+                      }}
+                    className={`text-white ${activeSection ==='about' ? 'isActive' : ''}`}>About Us</motion.a>
                 </li>
                 <li>
-                    <a href="#gallery"
-                    className={`text-white ${activeSection ==='gallery' ? 'isActive' : ''}`}>Gallery</a>
+                    <motion.a href="#gallery"
+                      whileHover={{scale: 1.1}}
+                      whileTap={{scale: 0.9}}
+                      onClick={(e) => {
+                          e.preventDefault();
+                          handleCloseMenu();
+                          handleScrollTo('gallery')
+                      }}
+                    className={`text-white ${activeSection ==='gallery' ? 'isActive' : ''}`}>Gallery</motion.a>
                 </li>
                 <li>
-                    <a href="#testimonial"
-                    className={`text-white ${activeSection ==='testimonial' ? 'isActive' : ''}`}>Testimonial</a>
+                    <motion.a href="#testimonial"
+                      whileHover={{scale: 1.1}}
+                      whileTap={{scale: 0.9}}
+                      onClick={(e) => {
+                          e.preventDefault();
+                          handleCloseMenu();
+                          handleScrollTo('testimonial')
+                      }}
+                    className={`text-white ${activeSection ==='testimonial' ? 'isActive' : ''}`}>Testimonial</motion.a>
                 </li>
             </ul>
         )
@@ -114,7 +142,7 @@ const Navbar = () => {
         {/* mobile nav items */}
         {
             isOpen && (
-                <nav className='absoulute top-full left-0 w-full bg-heroBg z-20 md:hidden'>
+                <nav className='absolute top-full left-0 w-full bg-heroBg z-20 md:hidden'>
                     <ul className='flex flex-col p-4 space-y-3'>
                         {navLinks.props.children}
                     <li className='py-2'>
