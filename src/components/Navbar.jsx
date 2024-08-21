@@ -14,7 +14,7 @@ const Navbar = () => {
         }
 
         const handleScroll = () => {
-            const sections = ['home', 'services', 'about', 'pricing', 'testimonial'];
+            const sections = ['home', 'services', 'about', 'gallery', 'testimonial'];
             const scrollPosition = window.scrollY + 100;
 
             sections.forEach(section => {
@@ -53,9 +53,9 @@ const Navbar = () => {
                     onClick={(e) => {
                         e.preventDefault();
                         handleCloseMenu();
-                        handleScrollTo('home')
+                        handleScrollTo('hero')
                     }}
-                    href="#home"
+                    href="#hero"
                     className={`text-white ${activeSection ==='home' ? 'isActive' : ''}`}>Home</motion.a>
                 </li>
                 <li>
