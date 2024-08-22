@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Navbar = () => {
         const [isOpen, setIsOpen] = useState(false);
-        const [activeSection, setActiveSection] = useState('home');
+        const [activeSection, setActiveSection] = useState('hero');
         const handleToggle = () => {
             setIsOpen(!isOpen)
         }
@@ -14,7 +14,7 @@ const Navbar = () => {
         }
 
         const handleScroll = () => {
-            const sections = ['home', 'services', 'about', 'gallery', 'testimonial'];
+            const sections = ['hero', 'services', 'about', 'gallery', 'testimonial'];
             const scrollPosition = window.scrollY + 100;
 
             sections.forEach(section => {
@@ -56,7 +56,7 @@ const Navbar = () => {
                         handleScrollTo('hero')
                     }}
                     href="#hero"
-                    className={`text-white ${activeSection ==='home' ? 'isActive' : ''}`}>Home</motion.a>
+                    className={`text-white ${activeSection ==='hero' ? 'isActive' : ''}`}>Home</motion.a>
                 </li>
                 <li>
                     <motion.a href="#services"
@@ -112,9 +112,11 @@ const Navbar = () => {
         <div className='container mx-auto flex justify-between items-center h-full'>
             {/* logo */}
             <div>
-                <a href='/'>
-                <img src='/gdlogo.webp' alt='gulp design logo' className='max-h-14'></img>
-                </a>
+                <motion.a href='/'>
+                <img src='/gdlogo.webp' alt='gulp design logo' className='max-h-14'>
+                
+                </img>
+                </motion.a>
             </div>
             {/* navitems */}
             <div className='hidden md:flex flex-grow justify-center'>
@@ -124,7 +126,12 @@ const Navbar = () => {
             </div>
             {/* button */}
             <div className='hidden md:block'>
-                <a href="#contact" className='text-white bg-primary hover:bg-primary/90 px-4 py-2 rounded'>
+                <a 
+                onClick={e => {
+                    e.preventDefault();
+                    handleScrollTo('contact')
+                }}
+                href="#contact" className='text-white bg-primary hover:bg-primary/90 px-4 py-2 rounded'>
                     Contact Us
                 </a>
             </div>
@@ -151,6 +158,7 @@ const Navbar = () => {
                         onClick={(e) => {
                             e.preventDefault();
                             handleCloseMenu();
+                            handleScrollTo('contact');
                         }}
                         >
                             Contact Us

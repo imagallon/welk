@@ -49,3 +49,10 @@ body{
   .react-tabs__tab-panel--selected {
     display: block;
   }
+
+  .navbar {
+    z-index: 1000; /* Ensure navbar stays on top */
+    position: fixed; /* Make navbar stay at the top */
+    width: 100%;
+    top: 0;
+  }
