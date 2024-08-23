@@ -6,6 +6,7 @@ import Services from './components/Services';
 import Testimonial from './components/Testimonial';
 import Contact from './components/Contact';
 import Gallery from './components/Gallery';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Gallery/>
       <Testimonial/>
       <Contact/>
+      <Footer/>
     </div>
   );
 }
